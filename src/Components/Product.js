@@ -26,11 +26,11 @@ export default class Product extends Component {
                   disabled={inCart ? true : false}
                   onClick={() => {
                     value.addToCart(id);
+                    value.openModal(id);
                   }}
                 >
                   {inCart ? (
                     <p className="text-capitalize mb-0" disabled>
-                      {" "}
                       In Cart
                     </p>
                   ) : (
@@ -65,6 +65,7 @@ Product.propTypes = {
   }).isRequired,
 };
 
+//styled components
 const ProductWrapper = styled.div`
   .card {
     border-color: transparent;
